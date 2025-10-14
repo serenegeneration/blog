@@ -1,0 +1,80 @@
+:root {
+    --background: black;
+    --primary-color: black;
+    --secondary-color: rgb(86, 86, 86);
+    --accent-color: aqua;
+    --text-color: white;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    width: 700px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+img{
+    max-width: 100%;
+}
+
+body{
+    background-color: var(--background);
+    color: var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-page{
+    width: 700px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#button{
+   background-color: var(--background);
+   color: var(--accent-color);
+}
+
+.loader {
+  margin-top: 20px;
+  border: 5px solid #ccc;
+  border-top: 5px solid #333;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  display: block;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.is-invalid {
+    border-color: red; 
+    border-color: red;
+    padding-right: calc(1.5em + .75rem); 
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(.375em + .1875rem) center;
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+
+}
+
+.is-valid {
+    border-color: red; 
+    border-color: rgb(21, 255, 0);
+    padding-right: calc(1.5em + .75rem); 
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat ;
+    background-position: right calc(.375em + .1875rem) center;
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+
+}
