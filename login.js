@@ -42,7 +42,7 @@ function validateForm(event) {
         
         setTimeout(function () {
             loader.style.display = 'none';
-            window.location.href = 'https://serenegeneration.github.io/blog/blog.html';
+            window.location.href = 'Blog.html';
         }, 2000);
     }
 }
@@ -57,10 +57,4 @@ function makeInvalid(element) {
 
 function makeValid(element) {
     element.style.border = "2px solid green";
-
 }
-
-
-
-
-

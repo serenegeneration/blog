@@ -7,40 +7,46 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="wrapper"></div>
-    <h1>welcome to my blog</h1>
-    <h5>this is my story into game dev and the progress i make</h5>
-    <br>
-    <h5>9/10/2025</h5>
-    <h5>i have made a lot of progress </h5>
-    <img src="images/progressday1.jpg" alt="day 1 progress">
-    <h5>as you can see from my changes in my unity version control</h5>
-    <h5>not only did i manage to add a tilemap</h5>
-    <h5>i also followed the tutorial far enough to write the random generation map</h5>
-    <h5>as well as that i added lots of comments</h5>
-    <h5>this even includes a nested loop to gill the board with tiles.</h5>
-    <h5>___________________________________________________________________________________</h5>
-    <h5>13/10/2025</h5>
-    <h5>although i do not have screenshots as i have forgot to capture them as a screenshot</h5>
-    <h5>i accomplished a lot on this day.</h5>
-    <h5>as well as my game now generating a random 8 by 8 grid of floor tiles</h5>
-    <h5>i now also have a border of seperate assets that generate a map border.</h5>
-    <h5>these will be inaccesible to the player model.</h5>
-    <h5>____________________________________________________________________________________</h5>
-    <h5>14/10/2025</h5>
-    <h5>eureka! even more progress comes todayu and im thinking of recording a basic video.</h5>
-    <h5>now my game is centralised completely (except a little off the top.)</h5>
-    <h5>i now have a character model next will be to add a player controller.</h5>
-    <h5>this also allows the model to display over the board that is generated.</h5>
-    <iframe width="320" height="240" 
-        srchttps://www.youtube.com/embed?v=cSF48plAIrE" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
+<div class="wrapper"></div>
+<h1>welcome to my blog</h1>
+<h5>this is my story into game dev and the progress i make</h5>
+<h5>how more stuff i have worked on check out my github found here!</h5>
+<a href="https://github.com/serenegeneration"target=_self style="text-decoration: none;">github/serenegeneration</a>
+
+<br>
+
+<h5>you can also use this button to print your window.</h5>
+<input value='Print' type='button' onclick='Print()' />
+
+<h5>and this button will allow you to change text color</h5>
+<button onclick="changeColor()">color</button>
+<!-- Post Creator Section -->
+<div class="post-creator">
+<h3>Create a New Post</h3>
+<textarea id="titleContent" placeholder = "add title here!"></textarea>
+<textarea id="postContent" placeholder="it's time to post an update!"></textarea>
+<br>
+<button onclick="createPost()">Post</button>
+</div>
+
+<!-- Posts Container -->
+<div id="postsContainer">
+<!-- Posts will appear here -->
+</div>
+<h5>14/10/2025</h5>
+<h5>eureka! even more progress comes todayu and im thinking of recording a basic video.</h5>
+<h5>now my game is centralised completely (except a little off the top.)</h5>
+<h5>i now have a character model next will be to add a player controller.</h5>
+<h5>this also allows the model to display over the board that is generated.</h5>
+<!--  src="https://www.youtube.com/embed/cSF48plAIrE"   -->
+<iframe width="320" height="240" 
+src="https://www.youtube.com/watch?v=cSF48plAIrE" 
+frameborder="0" 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen>
 </iframe>
 </div>
+<hr>
+<script src="blog.js"></script>
 </body>
-
 </html>
-
-
