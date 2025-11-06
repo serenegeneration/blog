@@ -42,7 +42,7 @@ function validateForm(event) {
         
         setTimeout(function () {
             loader.style.display = 'none';
-            window.location.href = 'Blog.html';
+            window.location.href = 'blog.html';
         }, 2000);
     }
 }
@@ -57,4 +57,5 @@ function makeInvalid(element) {
 
 function makeValid(element) {
     element.style.border = "2px solid green";
+
 }
