@@ -33,9 +33,18 @@ const Print = () => {
 function createPost() {
     const titleContent = document.getElementById('titleContent').value;
     const postContent = document.getElementById('postContent').value;
-
+// trim used to remove beginning and end of a string
     if (postContent.trim() === '') {
         alert('Please write something before posting!');
+        return;
+    }
+    if (titleContent.trim() === '') {
+        alert('Please write a title posting!');
+        return;
+    }
+     // Check if title is more than 20 characters
+    if (titleContent.length > 20) {
+        alert('Title must be 20 characters or less!');
         return;
     }
 
@@ -105,8 +114,7 @@ function changeColor(){
 // the 16777215 is a very important number.
 // that is the decimal equivelent of white
 //in doing this it ensures a random color is generated of all colors.
-    const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
-    
+    const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);   
     // Changes color of all posts
     const posts = document.querySelectorAll('.post');
     posts.forEach(post => {
@@ -120,5 +128,12 @@ function changeColor(){
     }
 }
 
+function changebackground(){
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+}
+
 // Call loadPosts when page loads
+document.addEventListener('DOMContentLoaded', loadPosts);
+
 document.addEventListener('DOMContentLoaded', loadPosts);
