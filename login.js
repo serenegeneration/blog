@@ -47,6 +47,11 @@ function validateForm(event) {
     }
 }
 
+function changebackground(){
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+}
+
 // Add event listener
 loginForm.addEventListener("submit", validateForm);
 
@@ -59,3 +64,4 @@ function makeValid(element) {
     element.style.border = "2px solid green";
 
 }
+
