@@ -64,7 +64,8 @@ function createPost() {
             <svg fill="var(--secondary-color)" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
                  <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
             </svg>
-         </button>
+        </button>
+        <button onclick="printPost()">print post</button>
         <hr>
     `;
 
@@ -114,18 +115,51 @@ function loadPosts() {
             <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
             </svg>
             </button>
+            <button class="print-button">print post</button>
             <hr>
         `;
         postsContainer.appendChild(postElement);
     });
 
-    // Add click event listener
+    // Add click event listeners
     document.querySelectorAll('.delete-button').forEach(button => {
         button.onclick = function() {
             const index = this.getAttribute('data-index');
             deletePost(index);
         };
     });
+
+    document.querySelectorAll('.print-button').forEach(button => {
+    button.onclick = function() {
+        const postElement = this.closest('.post');
+        
+        // Create print window
+        const printWindow = window.open('', '_blank');
+        const postContent = postElement.innerHTML;
+        
+        printWindow.document.write(`
+            <html>
+                <head>
+                    <title>Print Post</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; margin: 20px; }
+                        .delete-button, .print-button { display: none; }
+                    </style>
+                </head>
+                <body>
+                    <div class="post">${postContent}</div>
+                    <script>
+                        window.onload = function() {
+                            window.print();
+                        }
+                    </script>
+                </body>
+            </html>
+        `);
+        printWindow.document.close();
+    };
+});
+
 }
 
 function changeColor(){
@@ -156,7 +190,7 @@ function changebackground(){
 function clearPosts() {
     if (confirm('Are you sure you want to delete all posts?')) {
         localStorage.removeItem('blogPosts');
-        // reload the page
+        // reload the page or update the UI
         location.reload();
     }
 }
@@ -168,11 +202,35 @@ function deletePost(index) {
     loadPosts();
 }
 
+function printPost(event) {
+    const buttonElement = event.target;
+    const postElement = buttonElement.closest('.post');
+    
+    // Creates a hidden container for printing
+    const printContainer = document.createElement('div');
+    printContainer.style.position = 'fixed';
+    printContainer.style.left = '-9999px';
+    printContainer.innerHTML = postElement.innerHTML;
+    
+    // Remove buttons from print version
+    printContainer.querySelectorAll('.delete-button, .print-button').forEach(btn => {
+        btn.remove();
+    });
+    
+    // Add to page
+    document.body.appendChild(printContainer);
+    
+    // Print
+    window.print();
+    
+    // Clean up
+    document.body.removeChild(printContainer);
+}
+
 // Call loadPosts when page loads
 document.addEventListener('DOMContentLoaded', loadPosts);
 
 document.addEventListener('DOMContentLoaded', loadPosts);
-
 
 
 
