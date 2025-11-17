@@ -119,7 +119,7 @@ function loadPosts() {
         postsContainer.appendChild(postElement);
     });
 
-    // Add click event listeners - SIMPLE VERSION
+    // Add click event listener
     document.querySelectorAll('.delete-button').forEach(button => {
         button.onclick = function() {
             const index = this.getAttribute('data-index');
@@ -156,7 +156,7 @@ function changebackground(){
 function clearPosts() {
     if (confirm('Are you sure you want to delete all posts?')) {
         localStorage.removeItem('blogPosts');
-        // Optional: reload the page or update the UI
+        // reload the page
         location.reload();
     }
 }
@@ -172,6 +172,7 @@ function deletePost(index) {
 document.addEventListener('DOMContentLoaded', loadPosts);
 
 document.addEventListener('DOMContentLoaded', loadPosts);
+
 
 
 
