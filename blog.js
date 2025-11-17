@@ -138,8 +138,17 @@ function changebackground(){
     element.classList.toggle("dark-mode");
 }
 
+function clearPosts() {
+    if (confirm('Are you sure you want to delete all posts?')) {
+        localStorage.removeItem('blogPosts');
+        // Optional: reload the page or update the UI
+        location.reload();
+    }
+}
+
 // Call loadPosts when page loads
 document.addEventListener('DOMContentLoaded', loadPosts);
 
 document.addEventListener('DOMContentLoaded', loadPosts);
+
 
